@@ -1,4 +1,4 @@
-import{e as a}from"./toggleHighContrast-eea0116e.js";import{_ as o,r as t,f as s,o as c,c as l,e as i}from"./index-7c490f25.js";const r=`export interface ReactiveMenuRouteParamsVO {\r
+import{e as a}from"./toggleHighContrast-52ca8d96.js";import{_ as o,r as t,f as s,o as c,c as l,e as i}from"./index-a82656f2.js";const r=`export interface ReactiveMenuRouteParamsVO {\r
   // 字段的key\r
   key: string;\r
   // 字段值，填了即为字段的值，\r
