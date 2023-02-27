@@ -16,9 +16,7 @@ const reactiveMenuData = reactiveMenu(menus, calcMock)
 const router = useRouter()
 
 function goHome () {
-    reactiveMenuData.methods.jump(reactiveMenuData.menus.find((o) => {
-        return o.config.isDefault
-    }) || reactiveMenuData.menus[0])
+    reactiveMenuData.methods.goDefault()
 }
 </script>
 

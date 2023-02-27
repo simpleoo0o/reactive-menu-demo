@@ -1,4 +1,4 @@
-import{e as a}from"./toggleHighContrast-52ca8d96.js";import{_ as o,r as t,f as s,o as c,c as l,e as i}from"./index-a82656f2.js";const r=`export interface ReactiveMenuRouteParamsVO {\r
+import{e as t}from"./toggleHighContrast-eb7c7cf2.js";import{_ as a,r as o,f as s,o as u,c,e as i}from"./index-6528462f.js";const r=`export interface ReactiveMenuRouteParamsVO {\r
   // 字段的key\r
   key: string;\r
   // 字段值，填了即为字段的值，\r
@@ -37,7 +37,29 @@ export interface ReactiveMenuItemVO {\r
       query?: ReactiveMenuRouteParamsVO[];\r
       path?: string; // 会无视name、params参数，直接作为地址跳转,支持 /a/:b/:c?,query参数请在query中定义\r
     };\r
+    menuItemAttrs: {[key: string]: any}; // Menu-Item 属性,具体参考element-plu文档\r
+    subMenuAttrs: {[key: string]: any}; // SubMenu 属性,具体参考element-plu文档\r
+    menuItemGroupAttrs: {[key: string]: any}; // Menu-Item-Group 属性,具体参考element-plu文档\r
   };\r
-  children?: ReactiveMenuItemVO[]\r
+  children?: ReactiveMenuItemVO[];\r
 }\r
-`;const u={class:"menu-editor"},m={__name:"Interface",setup(d){const e=t(null);console.log(r);let n=null;return s(()=>{n=a.create(e.value,{value:r,language:"typescript",readOnly:!0}),console.log(n)}),(_,p)=>(c(),l("div",u,[i("div",{class:"monaco-editor",ref_key:"$monaco",ref:e},null,512)]))}},b=o(m,[["__scopeId","data-v-c36132b8"]]);export{b as default};
+\r
+export interface ReactiveMenuVO {\r
+  menus: ReactiveMenuItemVO[]; // 排序过滤后的所有数据,一般用在一级导航上\r
+  secondMenus: ReactiveMenuItemVO[]; // 二级导航要展示的数据\r
+  mock: {[key: string]: any}; // 动态参数取值的地方\r
+  currentMenu: ReactiveMenuItemVO; // 当前选中的导航数据\r
+  currentMenuWithParents: ReactiveMenuItemVO[]; // 当前选中导航的链路\r
+  activeIndex: string;\r
+  topActiveIndex: string;\r
+  config: { // 配置项\r
+    autoIndex: boolean; // 无匹配导航时是否重定向到首页\r
+    selfJump: boolean; // 点击当前导航时，是否跳转\r
+  };\r
+  methods: { // 暴露的方法\r
+    jump: (data: ReactiveMenuItemVO) => void;\r
+    updateMenus: (menus: ReactiveMenuItemVO[]) => void;\r
+    goDefault: (menus: ReactiveMenuItemVO[]) => void;\r
+  }\r
+}\r
+`;const l={class:"menu-editor"},m={__name:"Interface",setup(d){const e=o(null);console.log(r);let n=null;return s(()=>{n=t.create(e.value,{value:r,language:"typescript",readOnly:!0}),console.log(n)}),(p,g)=>(u(),c("div",l,[i("div",{class:"monaco-editor",ref_key:"$monaco",ref:e},null,512)]))}},v=a(m,[["__scopeId","data-v-c36132b8"]]);export{v as default};

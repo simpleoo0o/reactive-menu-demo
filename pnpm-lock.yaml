@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@plantdata/reactive-menu-item-vue3': ^0.0.1
+  '@plantdata/reactive-menu-item-vue3': ^0.0.2
   '@vitejs/plugin-vue': ^4.0.0
   '@yankeeinlondon/code-builder': ^1.2.1
   monaco-editor: ^0.35.0
@@ -13,7 +13,7 @@ specifiers:
   vue-router: ^4.1.6
 
 dependencies:
-  '@plantdata/reactive-menu-item-vue3': 0.0.1
+  '@plantdata/reactive-menu-item-vue3': 0.0.2
   monaco-editor: registry.npmmirror.com/monaco-editor/0.35.0
   vue: registry.npmmirror.com/vue/3.2.47
   vue-router: registry.npmmirror.com/vue-router/4.1.6_vue@3.2.47
@@ -28,8 +28,8 @@ devDependencies:
 
 packages:
 
-  /@plantdata/reactive-menu-item-vue3/0.0.1:
-    resolution: {integrity: sha1-rQ+O7wAO2xfP5xtGhTrHwIWWFjM=, tarball: '@plantdata/reactive-menu-item-vue3/download/@plantdata/reactive-menu-item-vue3-0.0.1.tgz'}
+  /@plantdata/reactive-menu-item-vue3/0.0.2:
+    resolution: {integrity: sha1-bgzRknFSJj5Cd8vaNshgwc9felA=, tarball: '@plantdata/reactive-menu-item-vue3/download/@plantdata/reactive-menu-item-vue3-0.0.2.tgz'}
     dependencies:
       element-plus: registry.npmmirror.com/element-plus/2.2.32_vue@3.2.47
       lodash: registry.npmmirror.com/lodash/4.17.21

@@ -16,14 +16,14 @@ onMounted(() => {
         value: JSON.stringify(reactiveMenuData.menus, null, 4),
         language: 'json'
     })
-    console.log(monacoIns);
 })
 
 function save () {
     if (monacoIns) {
         const str = monacoIns.getValue()
         try {
-            reactiveMenuData.menus = JSON.parse(str)
+            const newMenus = JSON.parse(str)
+            reactiveMenuData.methods.updateMenus(newMenus)
         } catch (e) {
             ElMessage({
                 type: 'error',
