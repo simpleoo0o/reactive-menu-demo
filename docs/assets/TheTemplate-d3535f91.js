@@ -1,1 +1,0 @@
-import{u as s,o,c as n,a as u,b as e,d as t,t as r,F as c,e as l,R as _}from"./index-6528462f.js";const m=l("br",null,null,-1),N={__name:"TheTemplate",setup(p){const a=s();return(d,i)=>(o(),n(c,null,[u(e(_)),t(" routerName: "+r(e(a).name)+" ",1),m,t(" query: "+r(e(a).query),1)],64))}};export{N as default};
