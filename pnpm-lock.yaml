@@ -1,9 +1,11 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@plantdata/reactive-menu-item-vue3': ^0.0.2
+  '@plantdata/reactive-menu-item-vue3': ^0.0.4
   '@vitejs/plugin-vue': ^4.0.0
+  element-plus: ^2.2.33
   highlight.js: ^11.7.0
+  lodash: ^4.17.21
   marked: ^4.2.12
   monaco-editor: ^0.35.0
   sass: ^1.58.3
@@ -13,8 +15,10 @@ specifiers:
   vue-router: ^4.1.6
 
 dependencies:
-  '@plantdata/reactive-menu-item-vue3': 0.0.2
+  '@plantdata/reactive-menu-item-vue3': 0.0.4
+  element-plus: registry.npmmirror.com/element-plus/2.2.33_vue@3.2.47
   highlight.js: registry.npmmirror.com/highlight.js/11.7.0
+  lodash: registry.npmmirror.com/lodash/4.17.21
   marked: registry.npmmirror.com/marked/4.2.12
   monaco-editor: registry.npmmirror.com/monaco-editor/0.35.0
   vue: registry.npmmirror.com/vue/3.2.47
@@ -28,15 +32,8 @@ devDependencies:
 
 packages:
 
-  /@plantdata/reactive-menu-item-vue3/0.0.2:
-    resolution: {integrity: sha1-bgzRknFSJj5Cd8vaNshgwc9felA=, tarball: '@plantdata/reactive-menu-item-vue3/download/@plantdata/reactive-menu-item-vue3-0.0.2.tgz'}
-    dependencies:
-      element-plus: registry.npmmirror.com/element-plus/2.2.32_vue@3.2.47
-      lodash: registry.npmmirror.com/lodash/4.17.21
-      vue: registry.npmmirror.com/vue/3.2.47
-      vue-router: registry.npmmirror.com/vue-router/4.1.6_vue@3.2.47
-    transitivePeerDependencies:
-      - '@vue/composition-api'
+  /@plantdata/reactive-menu-item-vue3/0.0.4:
+    resolution: {integrity: sha1-4d1vLXD/H1EBDSMwe/fuRKMEz+E=, tarball: '@plantdata/reactive-menu-item-vue3/download/@plantdata/reactive-menu-item-vue3-0.0.4.tgz'}
     dev: false
 
   registry.npmmirror.com/@babel/helper-string-parser/7.19.4:
@@ -77,11 +74,11 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  registry.npmmirror.com/@element-plus/icons-vue/2.0.10_vue@3.2.47:
-    resolution: {integrity: sha512-ygEZ1mwPjcPo/OulhzLE7mtDrQBWI8vZzEWSNB2W/RNCRjoQGwbaK4N8lV4rid7Ts4qvySU3njMN7YCiSlSaTQ==, registry: http://192.168.4.3:7001/, tarball: https://registry.npmmirror.com/@element-plus/icons-vue/-/icons-vue-2.0.10.tgz}
-    id: registry.npmmirror.com/@element-plus/icons-vue/2.0.10
+  registry.npmmirror.com/@element-plus/icons-vue/2.1.0_vue@3.2.47:
+    resolution: {integrity: sha512-PSBn3elNoanENc1vnCfh+3WA9fimRC7n+fWkf3rE5jvv+aBohNHABC/KAR5KWPecxWxDTVT1ERpRbOMRcOV/vA==, registry: http://192.168.4.3:7001/, tarball: https://registry.npmmirror.com/@element-plus/icons-vue/-/icons-vue-2.1.0.tgz}
+    id: registry.npmmirror.com/@element-plus/icons-vue/2.1.0
     name: '@element-plus/icons-vue'
-    version: 2.0.10
+    version: 2.1.0
     peerDependencies:
       vue: ^3.2.0
     dependencies:
@@ -330,18 +327,18 @@ packages:
     dev: true
     optional: true
 
-  registry.npmmirror.com/@floating-ui/core/1.2.1:
-    resolution: {integrity: sha512-LSqwPZkK3rYfD7GKoIeExXOyYx6Q1O4iqZWwIehDNuv3Dv425FIAE8PRwtAx1imEolFTHgBEcoFHm9MDnYgPCg==, registry: http://192.168.4.3:7001/, tarball: https://registry.npmmirror.com/@floating-ui/core/-/core-1.2.1.tgz}
+  registry.npmmirror.com/@floating-ui/core/1.2.2:
+    resolution: {integrity: sha512-FaO9KVLFnxknZaGWGmNtjD2CVFuc0u4yeGEofoyXO2wgRA7fLtkngT6UB0vtWQWuhH3iMTZZ/Y89CMeyGfn8pA==, registry: http://192.168.4.3:7001/, tarball: https://registry.npmmirror.com/@floating-ui/core/-/core-1.2.2.tgz}
     name: '@floating-ui/core'
-    version: 1.2.1
+    version: 1.2.2
     dev: false
 
-  registry.npmmirror.com/@floating-ui/dom/1.2.1:
-    resolution: {integrity: sha512-Rt45SmRiV8eU+xXSB9t0uMYiQ/ZWGE/jumse2o3i5RGlyvcbqOF4q+1qBnzLE2kZ5JGhq0iMkcGXUKbFe7MpTA==, registry: http://192.168.4.3:7001/, tarball: https://registry.npmmirror.com/@floating-ui/dom/-/dom-1.2.1.tgz}
+  registry.npmmirror.com/@floating-ui/dom/1.2.3:
+    resolution: {integrity: sha512-lK9cZUrHSJLMVAdCvDqs6Ug8gr0wmqksYiaoj/bxj2gweRQkSuhg2/V6Jswz2KiQ0RAULbqw1oQDJIMpQ5GfGA==, registry: http://192.168.4.3:7001/, tarball: https://registry.npmmirror.com/@floating-ui/dom/-/dom-1.2.3.tgz}
     name: '@floating-ui/dom'
-    version: 1.2.1
+    version: 1.2.3
     dependencies:
-      '@floating-ui/core': registry.npmmirror.com/@floating-ui/core/1.2.1
+      '@floating-ui/core': registry.npmmirror.com/@floating-ui/core/1.2.2
     dev: false
 
   registry.npmmirror.com/@sxzz/popperjs-es/2.11.7:
@@ -577,17 +574,17 @@ packages:
     version: 1.11.7
     dev: false
 
-  registry.npmmirror.com/element-plus/2.2.32_vue@3.2.47:
-    resolution: {integrity: sha512-DTJMhYOy6MApbmh6z/95hPTK5WrBiNHGzV4IN+uEkup1WoimQ+Qyt8RxKdTe/X1LWEJ8YgWv/Cl8P4ocrt5z5g==, registry: http://192.168.4.3:7001/, tarball: https://registry.npmmirror.com/element-plus/-/element-plus-2.2.32.tgz}
-    id: registry.npmmirror.com/element-plus/2.2.32
+  registry.npmmirror.com/element-plus/2.2.33_vue@3.2.47:
+    resolution: {integrity: sha512-E/PmMnv4+4I9Ue0ZDfx2gGgGj4iBlTCWcES3o4jxfYjayFlcQO3UvElJzhaJZ8vDm9yfNN7t2w/xYOhsSYCNNg==, registry: http://192.168.4.3:7001/, tarball: https://registry.npmmirror.com/element-plus/-/element-plus-2.2.33.tgz}
+    id: registry.npmmirror.com/element-plus/2.2.33
     name: element-plus
-    version: 2.2.32
+    version: 2.2.33
     peerDependencies:
       vue: ^3.2.0
     dependencies:
       '@ctrl/tinycolor': registry.npmmirror.com/@ctrl/tinycolor/3.6.0
-      '@element-plus/icons-vue': registry.npmmirror.com/@element-plus/icons-vue/2.0.10_vue@3.2.47
-      '@floating-ui/dom': registry.npmmirror.com/@floating-ui/dom/1.2.1
+      '@element-plus/icons-vue': registry.npmmirror.com/@element-plus/icons-vue/2.1.0_vue@3.2.47
+      '@floating-ui/dom': registry.npmmirror.com/@floating-ui/dom/1.2.3
       '@popperjs/core': registry.npmmirror.com/@sxzz/popperjs-es/2.11.7
       '@types/lodash': registry.npmmirror.com/@types/lodash/4.14.191
       '@types/lodash-es': registry.npmmirror.com/@types/lodash-es/4.17.6

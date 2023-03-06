@@ -340,6 +340,26 @@ const menus = [
                 }
             }
         ]
+    },
+    {
+        name: '一级导航跳转测试',
+        enable: true,
+        checked: true,
+        type: 'menu',
+        order: 1,
+        config: {
+            isDefault: false,
+            icon: 'ic-system',
+            target: '_blank',
+            route: {
+                path: 'https://www.baidu.com/s?wd=b',
+                query: [
+                    {
+                        key: 'apk'
+                    }
+                ]
+            }
+        }
     }
 ]
 resetId(menus)
