@@ -1,10 +1,12 @@
-import{e as t}from"./toggleHighContrast-9aa404dd.js";import{_ as a,r as o,f as s,o as u,c,e as i}from"./index-9b76917b.js";const r=`export interface ReactiveMenuRouteParamsVO {\r
+import{e as t}from"./toggleHighContrast-903f1800.js";import{_ as a,r as o,f as s,o as u,c,e as i}from"./index-a9f31147.js";const r=`export interface ReactiveMenuRouteParamsVO {\r
   // 字段的key\r
   key: string;\r
-  // 字段值，填了即为字段的值，\r
-  // 若不填，从mockConfig中用key取值\r
-  // :key 会被替换成 mockConfig[key]\r
-  // 支持:key?\r
+  /**\r
+   * 字段值，填了即为字段的值，\r
+   * 若不填，从mockConfig中用key取值\r
+   * \${key} 会被替换成 mockConfig[key]\r
+   * 支持\${key?},表示不参与比较\r
+   */\r
   value?: string;\r
   // 地址比较时是否必选\r
   isReal?: boolean;\r
@@ -35,7 +37,7 @@ export interface ReactiveMenuItemVO {\r
       name: string;\r
       params?: ReactiveMenuRouteParamsVO[];\r
       query?: ReactiveMenuRouteParamsVO[];\r
-      path?: string; // 会无视name、params参数，直接作为地址跳转,支持 /a/:b/:c?,query参数请在query中定义\r
+      path?: string; // 会无视name、params参数，直接作为地址跳转,支持 /a/\${b}/\${c}?d=\${d},query参数也可在query中定义；支持\${e?}，表示不参与比较\r
     };\r
     menuItemAttrs: {[key: string]: any}; // Menu-Item 属性,具体参考element-plu文档\r
     subMenuAttrs: {[key: string]: any}; // SubMenu 属性,具体参考element-plu文档\r
@@ -53,8 +55,10 @@ export interface ReactiveMenuVO {\r
   activeIndex: string;\r
   topActiveIndex: string;\r
   config: { // 配置项\r
-    autoIndex: boolean; // 无匹配导航时是否重定向到首页\r
-    selfJump: boolean; // 点击当前导航时，是否跳转\r
+    autoIndex: boolean; // 无匹配导航时是否重定向到首页，默认true\r
+    selfJump: boolean; // 点击当前导航时，是否跳转，默认false\r
+    disableMock: boolean; // 禁用mock,自行处理参数，默认false\r
+    resetId: boolean; // 重置Id和parentId，限制同级100个，默认false\r
   };\r
   methods: { // 暴露的方法\r
     jump: (data: ReactiveMenuItemVO) => void;\r
