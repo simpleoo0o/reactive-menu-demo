@@ -10,7 +10,7 @@ const router = createRouter({
             component: HomeView,
             children: [
                 {
-                    path: '/template',
+                    path: '/template/:a?',
                     name: 'template',
                     component: () => import('../views/TheTemplate.vue')
                 },

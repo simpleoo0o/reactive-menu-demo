@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@plantdata/reactive-menu-item-vue3": "^0.0.4",
+    "@plantdata/reactive-menu-item-vue3": "^0.0.8",
     "element-plus": "^2.2.33",
     "highlight.js": "^11.7.0",
     "lodash": "^4.17.21",

@@ -3,7 +3,7 @@ import { RouterView, useRouter } from "vue-router";
 import { ElContainer, ElHeader, ElAside, ElMain, ElMenu } from 'element-plus'
 import reactiveMenu from '@plantdata/reactive-menu-item-vue3/reactive-menu'
 import menus from '../menus'
-import ReactiveMenuItem from "@plantdata/reactive-menu-item-vue3/ReactiveMenuItem.vue";
+import { ReactiveMenuItem } from "@plantdata/reactive-menu-item-vue3";
 import { computed } from "vue";
 
 const calcMock = computed(() => {
@@ -12,7 +12,12 @@ const calcMock = computed(() => {
         apk: 'k_p_a'
     }
 })
-const reactiveMenuData = reactiveMenu(menus, calcMock)
+const reactiveMenuData = reactiveMenu(menus, {
+    mock: calcMock,
+    config: {
+        resetId: true
+    }
+})
 const router = useRouter()
 
 function goHome () {

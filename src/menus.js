@@ -10,7 +10,7 @@ const menus = [
         config: {
             isDefault: true,
             icon: 'ic-zsjm-gndy',
-            boundary: true,
+            boundary: true
         },
         children: [
             {
@@ -142,7 +142,8 @@ const menus = [
                         }, {
                             key: 'url',
                             isReal: true,
-                            value: '/a/b/c/:kgName/:apk/:page?'
+                            // eslint-disable-next-line no-template-curly-in-string
+                            value: '/a/b/c/${kgName}/${apk?}/${page?}?kw=${kw}'
                         }]
                     }
                 }
@@ -162,6 +163,27 @@ const menus = [
                         query: [
                             {
                                 key: 'kgName'
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                name: 'path测试',
+                enable: true,
+                checked: true,
+                type: 'menu',
+                order: 1,
+                config: {
+                    isDefault: false,
+                    icon: 'ic-system',
+                    route: {
+                        path: '/template/${apk?}?type=path测试&apk=${apk?}',
+                        query: [
+                            {
+                                key: 'url',
+                                value: 'https://www.baidu.com/s?wd=${kgName?}',
+                                isReal: true
                             }
                         ]
                     }
@@ -228,7 +250,7 @@ const menus = [
                 query: [{
                     key: 'type',
                     isReal: true,
-                    value: '3'
+                    value: '一级菜单3'
                 }]
             }
         },
@@ -271,7 +293,7 @@ const menus = [
                                     value: '3-1-1'
                                 }]
                             }
-                        },
+                        }
                     },
                     {
                         name: '3-1-2',
@@ -291,7 +313,7 @@ const menus = [
                                     value: '3-1-2'
                                 }]
                             }
-                        },
+                        }
                     }
                 ]
             }
@@ -362,16 +384,5 @@ const menus = [
         }
     }
 ]
-resetId(menus)
 export default menus
 
-function resetId (list, pid = 0) {
-    const baseId = pid * 100
-    list.forEach((item, i) => {
-        item.id = baseId + i + 1
-        item.pid = pid
-        if (item.children) {
-            resetId(item.children, item.id)
-        }
-    })
-}
