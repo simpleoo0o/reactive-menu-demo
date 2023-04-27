@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@plantdata/reactive-menu-item-vue3': ^0.0.8
+  '@plantdata/reactive-menu-item-vue3': ^0.0.11
   '@vitejs/plugin-vue': ^4.0.0
   element-plus: ^2.2.33
   highlight.js: ^11.7.0
@@ -15,7 +15,7 @@ specifiers:
   vue-router: ^4.1.6
 
 dependencies:
-  '@plantdata/reactive-menu-item-vue3': 0.0.8
+  '@plantdata/reactive-menu-item-vue3': 0.0.11
   element-plus: registry.npmmirror.com/element-plus/2.2.33_vue@3.2.47
   highlight.js: registry.npmmirror.com/highlight.js/11.7.0
   lodash: registry.npmmirror.com/lodash/4.17.21
@@ -32,8 +32,8 @@ devDependencies:
 
 packages:
 
-  /@plantdata/reactive-menu-item-vue3/0.0.8:
-    resolution: {integrity: sha1-gT5vKEm/g+RKFueIrgbdhlZDnIU=, tarball: '@plantdata/reactive-menu-item-vue3/download/@plantdata/reactive-menu-item-vue3-0.0.8.tgz'}
+  /@plantdata/reactive-menu-item-vue3/0.0.11:
+    resolution: {integrity: sha1-0t7/18WQcHDbY8scGjAt3v09K+Q=, tarball: '@plantdata/reactive-menu-item-vue3/download/@plantdata/reactive-menu-item-vue3-0.0.11.tgz'}
     dev: false
 
   registry.npmmirror.com/@babel/helper-string-parser/7.19.4:
