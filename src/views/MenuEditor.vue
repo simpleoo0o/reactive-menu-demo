@@ -1,12 +1,13 @@
 <script setup>
 import { ref, onMounted, inject } from 'vue'
 import { ElButton, ElMessage } from 'element-plus'
-
+import menus from '../menus'
 // import 'monaco-editor/esm/vs/editor/editor.all.js';
 // import 'monaco-editor/esm/vs/editor/standalone/browser/accessibilityHelp/accessibilityHelp.js';
 
 // import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 import * as monaco from 'monaco-editor'
+
 const $monaco = ref(null)
 
 const reactiveMenuData = inject('reactiveMenuData')
@@ -32,11 +33,18 @@ function save () {
         }
     }
 }
+
+function reset () {
+    if (monacoIns) {
+        monacoIns.setValue(JSON.stringify(menus, null, 4))
+    }
+}
 </script>
 
 <template>
     <div class="menu-editor">
         <div class="menu-editor-tool">
+            <el-button type="primary" @click="reset">重置</el-button>
             <el-button type="primary" @click="save">应用(刷新不保存)</el-button>
         </div>
 
@@ -46,17 +54,21 @@ function save () {
 
 <style scoped lang="scss">
 .menu-editor {
-    height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 
-    .menu-editor-tool{
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 16px;
-    }
+  .menu-editor-tool {
+    display: flex;
+    justify-content: flex-end;
+    margin: 16px;
+    flex: none;
+  }
 
-    .monaco-editor {
-        height: calc(100% - 32px - 16px);
-    }
+  .monaco-editor {
+    height: 1px;
+    flex: auto;
+  }
 }
 
 </style>

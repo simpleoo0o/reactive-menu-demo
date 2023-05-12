@@ -25,6 +25,11 @@ const router = createRouter({
                     component: () => import('../views/MenuTree.vue')
                 },
                 {
+                    path: '/menu/config',
+                    name: 'menuConfig',
+                    component: () => import('../views/MenuConfig.vue')
+                },
+                {
                     path: '/read/me',
                     name: 'readMe',
                     component: () => import('../views/ReamMe.vue')

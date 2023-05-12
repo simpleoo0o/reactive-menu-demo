@@ -41,7 +41,28 @@ const menus = [
                                     value: '1-1-2'
                                 }]
                             }
-                        }
+                        },
+                        children: [
+                            {
+                                name: '详情页面',
+                                enable: true,
+                                checked: true,
+                                type: 'submenu',
+                                order: 1,
+                                config: {
+                                    isDefault: true,
+                                    icon: 'ic-system',
+                                    route: {
+                                        name: 'template',
+                                        query: [{
+                                            key: 'type',
+                                            isReal: true,
+                                            value: '叶子菜单的详情页'
+                                        }]
+                                    }
+                                }
+                            }
+                        ]
                     },
                     {
                         name: '菜单分组测试1',
@@ -58,7 +79,7 @@ const menus = [
                                 query: [{
                                     key: 'type',
                                     isReal: true,
-                                    value: '1-1-1'
+                                    value: '菜单分组测试1'
                                 }]
                             }
                         },
@@ -77,7 +98,7 @@ const menus = [
                                         query: [{
                                             key: 'type',
                                             isReal: true,
-                                            value: '1-1-1-1'
+                                            value: '叶子菜单1'
                                         }]
                                     }
                                 }
@@ -96,7 +117,7 @@ const menus = [
                                         query: [{
                                             key: 'type',
                                             isReal: true,
-                                            value: '1-1-1-2'
+                                            value: '叶子菜单2'
                                         }]
                                     }
                                 }
@@ -178,10 +199,12 @@ const menus = [
                     isDefault: false,
                     icon: 'ic-system',
                     route: {
+                        // eslint-disable-next-line no-template-curly-in-string
                         path: '/template/${apk?}?type=path测试&apk=${apk?}',
                         query: [
                             {
                                 key: 'url',
+                                // eslint-disable-next-line no-template-curly-in-string
                                 value: 'https://www.baidu.com/s?wd=${kgName?}',
                                 isReal: true
                             }
@@ -253,71 +276,7 @@ const menus = [
                     value: '一级菜单3'
                 }]
             }
-        },
-        children: [
-            {
-                name: '3-1',
-                enable: true,
-                checked: true,
-                type: 'menu',
-                order: 1,
-                config: {
-                    isDefault: true,
-                    icon: 'ic-zsjm-gndy',
-                    boundary: true,
-                    route: {
-                        name: 'template',
-                        query: [{
-                            key: 'type',
-                            isReal: true,
-                            value: '3-1'
-                        }]
-                    }
-                },
-                children: [
-                    {
-                        name: '3-1-1',
-                        enable: true,
-                        checked: true,
-                        type: 'menu',
-                        order: 1,
-                        config: {
-                            isDefault: true,
-                            icon: 'ic-zsjm-gndy',
-                            boundary: false,
-                            route: {
-                                name: 'template',
-                                query: [{
-                                    key: 'type',
-                                    isReal: true,
-                                    value: '3-1-1'
-                                }]
-                            }
-                        }
-                    },
-                    {
-                        name: '3-1-2',
-                        enable: true,
-                        checked: true,
-                        type: 'menu',
-                        order: 1,
-                        config: {
-                            isDefault: true,
-                            icon: 'ic-zsjm-gndy',
-                            boundary: false,
-                            route: {
-                                name: 'template',
-                                query: [{
-                                    key: 'type',
-                                    isReal: true,
-                                    value: '3-1-2'
-                                }]
-                            }
-                        }
-                    }
-                ]
-            }
-        ]
+        }
     },
     {
         name: '菜单管理',
@@ -358,6 +317,21 @@ const menus = [
                     boundary: true,
                     route: {
                         name: 'menuTree'
+                    }
+                }
+            },
+            {
+                name: '菜单配置',
+                enable: true,
+                checked: true,
+                type: 'menu',
+                order: 1,
+                config: {
+                    isDefault: true,
+                    icon: 'ic-zsjm-gndy',
+                    boundary: true,
+                    route: {
+                        name: 'menuConfig'
                     }
                 }
             }

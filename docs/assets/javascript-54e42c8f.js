@@ -1,4 +1,4 @@
-import{conf as t,language as e}from"./typescript-18451d96.js";import"./toggleHighContrast-8e1f3ecb.js";import"./index-5f808bcf.js";/*!-----------------------------------------------------------------------------
+import{conf as t,language as e}from"./typescript-fad7f538.js";import"./toggleHighContrast-c088721c.js";import"./index-71c78080.js";/*!-----------------------------------------------------------------------------
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Version: 0.35.0(71ac097e6155a405f6be52b0b368a04508c31e31)
  * Released under the MIT license

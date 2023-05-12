@@ -1,9 +1,9 @@
 <script setup>
-import { RouterView, useRouter } from "vue-router";
+import { RouterView } from "vue-router";
 import { ElContainer, ElHeader, ElAside, ElMain, ElMenu } from 'element-plus'
 import reactiveMenu from '@plantdata/reactive-menu-item-vue3/reactive-menu'
 import menus from '../menus'
-import { ReactiveMenuItem } from "@plantdata/reactive-menu-item-vue3";
+import ReactiveMenuItem from "@plantdata/reactive-menu-item-vue3/ReactiveMenuItem.vue";
 import { computed } from "vue";
 
 const calcMock = computed(() => {
@@ -18,7 +18,6 @@ const reactiveMenuData = reactiveMenu(menus, {
         resetId: true
     }
 })
-const router = useRouter()
 
 function goHome () {
     reactiveMenuData.methods.goDefault()
@@ -29,25 +28,25 @@ function goHome () {
     <el-container class="container">
         <el-header>
             <div
-              @click="goHome"
-              class="logo">LOGO
+                    @click="goHome"
+                    class="logo">LOGO
             </div>
             <el-menu
-              :default-active="reactiveMenuData.topActiveIndex"
-              class="el-menu-demo"
-              mode="horizontal"
-              :ellipsis="false"
+                    :default-active="reactiveMenuData.topActiveIndex"
+                    class="el-menu-demo"
+                    mode="horizontal"
+                    :ellipsis="false"
             >
                 <reactive-menu-item v-for="item of reactiveMenuData.menus" :key="item.id" :data="item"/>
             </el-menu>
         </el-header>
         <el-container class="body">
-            <el-aside width="200px" v-if="reactiveMenuData.secondMenus && reactiveMenuData.secondMenus.length">
+            <el-aside width="200px" v-if="reactiveMenuData?.secondMenus?.length">
                 <el-menu
-                  :default-active="reactiveMenuData.activeIndex"
-                  class="el-menu-demo"
-                  mode="vertical"
-                  :ellipsis="false">
+                        :default-active="reactiveMenuData.activeIndex"
+                        class="el-menu-demo"
+                        mode="vertical"
+                        :ellipsis="false">
                     <reactive-menu-item v-for="item of reactiveMenuData.secondMenus" :key="item.id" :data="item">
                         <!--                        <template #menu-item="{data}">-->
                         <!--                            {{data.name}}={{data.id}}-->
@@ -67,46 +66,46 @@ function goHome () {
 
 <style scoped lang="scss">
 .container {
-    height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .el-header {
+    flex: none;
+    background: #eee;
+    padding: 0;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
-    .el-header {
-        flex: none;
-        background: #eee;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .logo {
-            flex: none;
-            font-size: 32px;
-            background: #aaa;
-            width: 200px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .el-menu {
-            flex: none;
-        }
+    .logo {
+      flex: none;
+      font-size: 32px;
+      background: #aaa;
+      width: 200px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .body {
-        flex: auto;
-        height: 1px;
-
-        .el-aside {
-            background: #eee;
-        }
-
-        .main{
-            padding: 0;
-        }
+    .el-menu {
+      flex: none;
     }
+  }
+
+  .body {
+    flex: auto;
+    height: 1px;
+
+    .el-aside {
+      background: #eee;
+    }
+
+    .main {
+      padding: 0;
+    }
+  }
 
 }
 </style>
