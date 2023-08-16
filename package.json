@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@plantdata/reactive-menu-item-vue3": "^0.0.13",
+    "@plantdata/reactive-menu-item-vue3": "^0.0.20",
     "element-plus": "^2.2.33",
     "highlight.js": "^11.7.0",
     "lodash": "^4.17.21",
@@ -26,6 +26,7 @@
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
     "prettier": "^2.8.8",
+    "rollup-plugin-visualizer": "^5.9.2",
     "sass": "^1.58.3",
     "vite": "^4.1.0",
     "vite-plugin-monaco-editor": "^1.1.0",
