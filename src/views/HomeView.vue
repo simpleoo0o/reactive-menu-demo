@@ -1,9 +1,9 @@
 <script setup>
 import { RouterView } from "vue-router";
 import { ElContainer, ElHeader, ElAside, ElMain, ElMenu } from 'element-plus'
-import reactiveMenu from '@plantdata/reactive-menu-item-vue3/reactive-menu'
+import reactiveMenu from 'reactive-menu-item/reactive-menu'
 import menus from '../menus'
-import ReactiveMenuItem from "@plantdata/reactive-menu-item-vue3/ReactiveMenuItem.vue";
+import ReactiveMenuItem from "reactive-menu-item/ReactiveMenuItem.vue";
 import { computed } from "vue";
 
 const calcMock = computed(() => {

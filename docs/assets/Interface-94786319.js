@@ -1,4 +1,4 @@
-import{e as t}from"./toggleHighContrast-398a57a2.js";import{_ as a,j as o,k as s,o as u,a as c,g as i}from"./index-497806ff.js";const r=`import { RouteLocationNamedRaw } from "vue-router";\r
+import{e as t}from"./toggleHighContrast-3003652f.js";import{_ as a,j as o,k as s,o as u,a as c,g as i}from"./index-8269a175.js";const r=`import { RouteLocationNamedRaw } from "vue-router";\r
 \r
 export interface ReactiveMenuVO {\r
   menus: ReactiveMenuItemVO[]; // 排序过滤后的所有数据,一般用在一级导航上\r
@@ -78,4 +78,4 @@ export interface ReactiveMenuRouteParamsVO {\r
   isReal?: boolean;\r
 }\r
 \r
-`;const l={class:"menu-editor"},m={__name:"Interface",setup(d){const e=o(null);console.log(r);let n=null;return s(()=>{n=t.create(e.value,{value:r,language:"typescript",readOnly:!0}),console.log(n)}),(p,v)=>(u(),c("div",l,[i("div",{class:"monaco-editor",ref_key:"$monaco",ref:e},null,512)]))}},g=a(m,[["__scopeId","data-v-c36132b8"]]);export{g as default};
+`;const l={class:"menu-editor"},m={__name:"Interface",setup(d){const e=o(null);console.log(r);let n=null;return s(()=>{n=t.create(e.value,{value:r,language:"typescript",readOnly:!0}),console.log(n)}),(p,v)=>(u(),c("div",l,[i("div",{class:"monaco-editor",ref_key:"$monaco",ref:e},null,512)]))}},g=a(m,[["__scopeId","data-v-8ca917f7"]]);export{g as default};

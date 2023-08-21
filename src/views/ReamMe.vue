@@ -1,6 +1,6 @@
 <script setup>
 import { marked }from 'marked'
-import readMe from '@plantdata/reactive-menu-item-vue3/README.md?raw'
+import readMe from 'reactive-menu-item/README.md?raw'
 const html = marked(readMe).replace(/language-vue/g, 'language-html');
 console.log(html);
 </script>

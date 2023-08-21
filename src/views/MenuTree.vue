@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import ReactiveMenuTree from "@plantdata/reactive-menu-item-vue3/ReactiveMenuTree.vue";
+import ReactiveMenuTree from "reactive-menu-item/ReactiveMenuTree.vue";
 import { inject } from "vue";
 
 const reactiveMenuData = inject('reactiveMenuData')

@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, inject } from 'vue'
-import code from '@plantdata/reactive-menu-item-vue3/interface.ts?raw'
+import code from 'reactive-menu-item/interface.ts?raw'
 import * as monaco from 'monaco-editor'
 const $monaco = ref(null)
 console.log(code);

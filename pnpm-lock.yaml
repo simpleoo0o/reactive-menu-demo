@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@plantdata/reactive-menu-item-vue3':
-    specifier: ^0.0.20
-    version: 0.0.20
   element-plus:
     specifier: ^2.2.33
     version: registry.npmmirror.com/element-plus@2.2.33(vue@3.2.47)
@@ -23,6 +20,9 @@ dependencies:
   monaco-editor:
     specifier: ^0.35.0
     version: registry.npmmirror.com/monaco-editor@0.35.0
+  reactive-menu-item:
+    specifier: ^0.0.20
+    version: registry.npmmirror.com/reactive-menu-item@0.0.20
   vue:
     specifier: ^3.2.45
     version: registry.npmmirror.com/vue@3.2.47
@@ -69,10 +69,6 @@ devDependencies:
     version: registry.npmmirror.com/vue-eslint-parser@9.2.1(eslint@8.22.0)
 
 packages:
-
-  /@plantdata/reactive-menu-item-vue3@0.0.20:
-    resolution: {integrity: sha1-CDUSjoUyb5dxqC8oZvhHas0KG+E=, tarball: http://192.168.4.3:7001/@plantdata/reactive-menu-item-vue3/download/@plantdata/reactive-menu-item-vue3-0.0.20.tgz}
-    dev: false
 
   registry.npmjs.org/@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==, registry: http://192.168.4.3:7001/, tarball: https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz}
@@ -2480,6 +2476,12 @@ packages:
     name: queue-microtask
     version: 1.2.3
     dev: true
+
+  registry.npmmirror.com/reactive-menu-item@0.0.20:
+    resolution: {integrity: sha512-3QZCj/px930ot/4n3ewy0kFq6nwnxSO/ca4nbvyVD2Dp6Nhsdyq2sKICMbcxYvc/2XsXIytdgszFWiXfpNLzyA==, registry: http://192.168.4.3:7001/, tarball: https://registry.npmmirror.com/reactive-menu-item/-/reactive-menu-item-0.0.20.tgz}
+    name: reactive-menu-item
+    version: 0.0.20
+    dev: false
 
   registry.npmmirror.com/readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==, registry: http://192.168.4.3:7001/, tarball: https://registry.npmmirror.com/readdirp/-/readdirp-3.6.0.tgz}
