@@ -1,0 +1,145 @@
+$--rmi: (
+        "bg": (
+                "default": transparent,
+                "active": transparent,
+                "hover": var(--el-menu-hover-bg-color),
+        ),
+        "font-color": (
+                "default": var(--el-menu-text-color),
+                "active": var(--el-menu-active-color),
+                "hover": var(--el-menu-hover-text-color),
+        ),
+        "font-size": (
+                "default": var(--el-menu-item-font-size),
+                "active": var(--el-menu-item-font-size),
+                "hover": var(--el-menu-item-font-size),
+        ),
+        "font-weight": (
+                "default": 400,
+                "active": 400,
+                "hover": 400,
+        ),
+        "icon-color": (
+                "default": var(--el-menu-text-color),
+                "active": var(--el-menu-active-color),
+                "hover": var(--el-menu-hover-text-color),
+        ),
+        "icon-size": (
+                "default": var(--el-menu-item-font-size),
+                "active": var(--el-menu-item-font-size),
+                "hover": var(--el-menu-item-font-size),
+        ),
+        "img-size": (
+                "default": var(--el-menu-item-font-size),
+                "active": var(--el-menu-item-font-size),
+                "hover": var(--el-menu-item-font-size),
+        ),
+        "border-width": (
+                "default": 0 0 2px 0,
+                "active": 0 0 2px 0,
+                "hover": 0 0 2px 0,
+        ),
+        "border-color": (
+                "default": transparent,
+                "active": var(--el-menu-active-color),
+                "hover": var(--el-menu-hover-bg-color),
+        ),
+        "line-height": (
+                "default": var(--el-menu-item-height),
+                "active": var(--el-menu-item-height),
+                "hover": var(--el-menu-item-height),
+        ),
+);
+
+@mixin menu-item($map, $state) {
+  display: block;
+  font-size: map-get(map-get($map, "font-size"), $state);
+  color: map-get(map-get($map, "font-color"), $state);
+  background: map-get(map-get($map, "bg"), $state);
+  border-width: map-get(map-get($map, "border-width"), $state) !important;
+  border-color: map-get(map-get($map, "border-color"), $state);
+  border-style: solid;
+  box-sizing: border-box;
+  line-height: map-get(map-get($map, "line-height"), $state);
+  .reactive-menu-item-icon, .el-sub-menu__icon-arrow {
+    color: map-get(map-get($map, "icon-color"), $state);
+  }
+  .reactive-menu-item-img {
+    width: map-get(map-get($map, "img-size"), $state);
+    height: map-get(map-get($map, "img-size"), $state);
+  }
+  .reactive-menu-item-text {
+    color: map-get(map-get($map, "font-color"), $state);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@mixin menu($map) {
+  .reactive-menu-item-menu-item {
+    @include menu-item($map, 'default');
+
+    &:not(.is-disabled):not(.reactive-menu-item-active):hover {
+      @include menu-item($map, 'hover');
+    }
+
+    &:focus {
+      @include menu-item($map, 'default');
+    }
+
+    &.reactive-menu-item-active {
+      @include menu-item($map, 'active');
+    }
+  }
+
+  .reactive-menu-item-sub-menu {
+    box-sizing: border-box;
+    .el-sub-menu__title {
+      @include menu-item($map, 'default');
+    }
+
+    &:not(.is-disabled):not(.reactive-menu-item-active):hover {
+      .el-sub-menu__title {
+        @include menu-item($map, 'default');
+      }
+    }
+
+    &:focus {
+      .el-sub-menu__title {
+        @include menu-item($map, 'default');
+      }
+    }
+
+    &.reactive-menu-item-active {
+      .el-sub-menu__title {
+        @include menu-item($map, 'default');
+      }
+    }
+  }
+
+  .reactive-menu-item-menu-item-group {
+    box-sizing: border-box;
+    .el-menu-item-group__title {
+      @include menu-item($map, 'default');
+    }
+
+    &:not(.is-disabled):not(.reactive-menu-item-active):hover {
+      .el-menu-item-group__title {
+        @include menu-item($map, 'default');
+      }
+    }
+
+    &:focus {
+      .el-menu-item-group__title {
+        @include menu-item($map, 'default');
+      }
+    }
+
+    &.reactive-menu-item-active {
+      .el-menu-item-group__title {
+        @include menu-item($map, 'default');
+      }
+    }
+  }
+}
