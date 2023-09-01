@@ -5,15 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && git add ./docs",
     "preview": "vite preview"
   },
   "dependencies": {
+    "ant-design-vue": "4.x",
     "element-plus": "^2.3.12",
     "highlight.js": "^11.8.0",
+    "install": "^0.13.0",
     "lodash": "^4.17.21",
     "marked": "^4.3.0",
     "monaco-editor": "^0.35.0",
+    "naive-ui": "^2.34.4",
+    "npm": "^9.8.1",
     "reactive-menu-item": "^0.0.23",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"

@@ -32,17 +32,18 @@ function handleCollapse() {
 <template>
   <el-container class="container">
     <el-header>
-      <div @click="goHome" class="logo">LOGO</div>
+      <div class="logo" @click="goHome">LOGO</div>
       <el-menu
         :default-active="reactiveMenuData.topActiveIndex"
         class="el-menu-demo"
         mode="horizontal"
-        :ellipsis="false">
+        :ellipsis="false"
+      >
         <reactive-menu-item v-for="item of reactiveMenuData.menus" :key="item.id" :data="item" />
       </el-menu>
     </el-header>
     <el-container class="body">
-      <el-aside :width="collapse ? 'auto' : '200px'" v-if="reactiveMenuData?.secondMenus?.length">
+      <el-aside v-if="reactiveMenuData?.secondMenus?.length" :width="collapse ? 'auto' : '200px'">
         <div class="menu-control" @click="handleCollapse">
           <div class="menu-control-line-container" :class="{ collapse: collapse }">
             <div class="menu-control-line"></div>
@@ -55,11 +56,13 @@ function handleCollapse() {
           :default-active="reactiveMenuData.activeIndex"
           class="el-menu-demo"
           mode="vertical"
-          :ellipsis="false">
+          :ellipsis="false"
+        >
           <reactive-menu-item
             v-for="item of reactiveMenuData.secondMenus"
             :key="item.id"
-            :data="item">
+            :data="item"
+          >
             <!--                        <template #menu-item="{data}">-->
             <!--                            {{data.name}}={{data.id}}-->
             <!--                        </template>-->
@@ -217,6 +220,14 @@ $second-menu-map: map-merge(
 
     .el-menu {
       @include menu($top-menu-map);
+
+      & > .reactive-menu-item-sub-menu {
+        &.reactive-menu-item-active {
+          .el-sub-menu__title {
+            @include menu-item($top-menu-map, 'active');
+          }
+        }
+      }
     }
   }
 
