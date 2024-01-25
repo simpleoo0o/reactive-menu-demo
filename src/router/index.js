@@ -1,6 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import TheTemplate from '../views/TheTemplate.vue'
+import NaiveHome from '../views/NaiveHome.vue'
+import AntdvHome from '../views/AntdvHome.vue'
 
 const router = createRouter({
   history: createWebHashHistory(''),
@@ -49,7 +51,7 @@ const router = createRouter({
         {
           name: 'naiveHome',
           path: 'naive',
-          component: () => import('../views/NaiveHome.vue'),
+          component: NaiveHome,
           children: [
             {
               path: 'template/:a?',
@@ -61,7 +63,7 @@ const router = createRouter({
         {
           name: 'antdvHome',
           path: 'antdv',
-          component: () => import('../views/AntdvHome.vue'),
+          component: AntdvHome,
           children: [
             {
               path: 'template/:a?',

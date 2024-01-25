@@ -1,4 +1,4 @@
-import{e as a}from"./toggleHighContrast-f25101ac.js";import{_ as o,r,o as s,a as u,c,b as i}from"./index-e5a2ad71.js";const t=`import { RouteLocationNamedRaw } from "vue-router";
+import{e as a}from"./toggleHighContrast-3c14ebd6.js";import{_ as o,r,o as s,a as u,c,b as i}from"./index-791630a1.js";const t=`import { RouteLocationNamedRaw } from "vue-router";
 
 export interface ReactiveMenuVO {
   menus: ReactiveMenuItemVO[]; // 排序过滤后的所有数据,一般用在一级导航上

@@ -1,4 +1,4 @@
-import{m as F}from"./toggleHighContrast-f25101ac.js";import"./index-e5a2ad71.js";/*!-----------------------------------------------------------------------------
+import{m as F}from"./toggleHighContrast-3c14ebd6.js";import"./index-791630a1.js";/*!-----------------------------------------------------------------------------
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Version: 0.35.0(71ac097e6155a405f6be52b0b368a04508c31e31)
  * Released under the MIT license
