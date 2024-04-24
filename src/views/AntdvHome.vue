@@ -8,7 +8,7 @@ import {
   Breadcrumb as ABreadcrumb,
   BreadcrumbItem as ABreadcrumbItem
 } from 'ant-design-vue'
-import useReactiveMenu from 'reactive-menu-item/useReactiveMenu.js'
+import { useReactiveMenu } from 'reactive-menu-item'
 import AntdvMenuItem from '../components/AntdvMenuItem.vue'
 import { RouterView } from 'vue-router'
 import { ref } from 'vue'

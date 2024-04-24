@@ -9,31 +9,31 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "ant-design-vue": "4.x",
-    "element-plus": "^2.3.12",
-    "highlight.js": "^11.8.0",
+    "ant-design-vue": "^4.2.0",
+    "element-plus": "^2.7.1",
+    "highlight.js": "^11.9.0",
     "install": "^0.13.0",
     "lodash": "^4.17.21",
-    "marked": "^4.3.0",
-    "monaco-editor": "^0.35.0",
-    "naive-ui": "^2.34.4",
-    "npm": "^9.8.1",
-    "reactive-menu-item": "^0.0.23",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
+    "marked": "^12.0.2",
+    "monaco-editor": "^0.48.0",
+    "naive-ui": "^2.38.1",
+    "npm": "^10.5.2",
+    "reactive-menu-item": "^1.0.5",
+    "vue": "^3.4.24",
+    "vue-router": "^4.3.2"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.3.3",
-    "@vitejs/plugin-vue": "^4.3.4",
-    "@vue/eslint-config-prettier": "^7.1.0",
+    "@rushstack/eslint-patch": "^1.10.2",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-standard": "^8.0.1",
     "eslint": "^8.48.0",
-    "eslint-plugin-vue": "^9.17.0",
-    "prettier": "^2.8.8",
-    "rollup-plugin-visualizer": "^5.9.2",
-    "sass": "^1.66.1",
-    "vite": "^4.4.9",
+    "eslint-plugin-vue": "^9.25.0",
+    "prettier": "^3.2.5",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "sass": "^1.75.0",
+    "vite": "^5.2.10",
     "vite-plugin-monaco-editor": "^1.1.0",
-    "vue-eslint-parser": "^9.3.1"
+    "vue-eslint-parser": "^9.4.2"
   }
 }

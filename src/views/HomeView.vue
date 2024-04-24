@@ -91,7 +91,8 @@ function handleCollapse() {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 48px;
+    height: 60px;
+    background: var(--el-menu-bg-color);
 
     .logo {
       flex: none;
@@ -107,12 +108,20 @@ function handleCollapse() {
 
     .el-menu {
       flex: none;
+      border: none;
     }
   }
 
   .body {
     flex: auto;
     height: 1px;
+
+    .el-aside{
+      background: var(--el-menu-bg-color);
+      .el-menu {
+        border: none;
+      }
+    }
 
     .menu-control {
       display: flex;
@@ -147,138 +156,19 @@ function handleCollapse() {
 </style>
 
 <style lang="scss">
-@import '../assets/reactive-menu-item.scss';
+body{
+  --el-menu-bg-color: #141414;
+  --el-menu-text-color: #d9d9d9;
+  --el-menu-active-color: #fff;
+  --el-menu-hover-bg-color: #434343;
+  --el-menu-hover-text-color: #fff;
 
-$top-menu-map: map-merge(
-  $--rmi,
-  (
-    'bg': (
-      'default': #141414,
-      'active': #434343,
-      'hover': #434343
-    ),
-    'font-color': (
-      'default': #d9d9d9,
-      'active': #fff,
-      'hover': #fff
-    ),
-    'icon-color': (
-      'default': #d9d9d9,
-      'active': #fff,
-      'hover': #fff
-    ),
-    'border-width': (
-      'default': 0 0 2px 0,
-      'active': 0 0 2px 0,
-      'hover': 0 0 2px 0
-    ),
-    'border-color': (
-      'default': #141414,
-      'active': #00b38a,
-      'hover': #434343
-    ),
-    'line-height': (
-      'default': 46px,
-      'active': 46px,
-      'hover': 46px
-    )
-  )
-);
-$second-menu-map: map-merge(
-  $--rmi,
-  (
-    'bg': (
-      'default': #333743,
-      'active': #40465c,
-      'hover': #40465c
-    ),
-    'font-color': (
-      'default': #909399,
-      'active': #fff,
-      'hover': #fff
-    ),
-    'icon-color': (
-      'default': #909399,
-      'active': #fff,
-      'hover': #fff
-    ),
-    'border-width': (
-      'default': 0 3px 0 0,
-      'active': 0 3px 0 0,
-      'hover': 0 3px 0 0
-    ),
-    'border-color': (
-      'default': #333743,
-      'active': #5677fc,
-      'hover': #40465c
-    )
-  )
-);
-.el-container {
-  .el-header {
-    background: #141414;
-
-    .el-menu {
-      @include menu($top-menu-map);
-
-      & > .reactive-menu-item-sub-menu {
-        &.reactive-menu-item-active {
-          .el-sub-menu__title {
-            @include menu-item($top-menu-map, 'active');
-          }
-        }
-      }
-    }
-  }
-
-  .el-aside {
-    max-width: 200px;
-    background: #333743;
-    @include menu($second-menu-map);
-  }
-}
-
-.el-popper.reactive-menu-item-sub-menu-popper {
-  .el-menu {
-    background: map-get(map-get($top-menu-map, 'bg'), 'default') !important;
-
-    .reactive-menu-item-menu-item {
-      @include menu-item($top-menu-map, 'default');
-
-      &:not(.is-disabled):not(.reactive-menu-item-active):hover {
-        @include menu-item($top-menu-map, 'hover');
-      }
-
-      &:focus {
-        @include menu-item($top-menu-map, 'default');
-      }
-
-      &.reactive-menu-item-active {
-        @include menu-item($top-menu-map, 'active');
-        border: none;
-      }
-    }
-  }
-}
-
-.el-popper.second-reactive-menu-item-sub-menu-popper {
-  .el-menu {
-    background: map-get(map-get($second-menu-map, 'bg'), 'default') !important;
-
-    .reactive-menu-item-menu-item {
-      @include menu-item($second-menu-map, 'default');
-
-      &:not(.is-disabled):not(.reactive-menu-item-active):hover {
-        @include menu-item($second-menu-map, 'hover');
-      }
-
-      &:focus {
-        @include menu-item($second-menu-map, 'default');
-      }
-
-      &.reactive-menu-item-active {
-        @include menu-item($second-menu-map, 'active');
-        border: none;
+  .reactive-menu-item{
+    &.is-active{
+      background: var(--el-menu-hover-bg-color) !important;
+      border-color: var(--el-color-primary) !important;
+      .el-sub-menu__title{
+        border-color: var(--el-color-primary) !important;
       }
     }
   }

@@ -1,6 +1,6 @@
 <script setup>
-import { ref, onMounted, inject } from 'vue'
-import code from 'reactive-menu-item/interface.ts?raw'
+import { ref, onMounted } from 'vue'
+import code from 'reactive-menu-item/useReactiveMenu.d.ts?raw'
 import * as monaco from 'monaco-editor'
 
 const $monaco = ref(null)

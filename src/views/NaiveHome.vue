@@ -8,7 +8,7 @@ import {
   NImage,
   NMenu
 } from 'naive-ui'
-import useReactiveMenu from 'reactive-menu-item/useReactiveMenu.js'
+import { useReactiveMenu } from 'reactive-menu-item'
 
 import { computed, h, nextTick, ref, watch } from 'vue'
 import * as _ from 'lodash'
