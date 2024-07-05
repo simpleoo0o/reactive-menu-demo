@@ -10,11 +10,11 @@ import * as monaco from 'monaco-editor'
 
 const $monaco = ref(null)
 
-const reactiveMenuData = inject('reactiveMenuData')
+const reactiveMenu = inject('reactiveMenu')
 let monacoIns = null
 onMounted(() => {
   monacoIns = monaco.editor.create($monaco.value, {
-    value: JSON.stringify(reactiveMenuData.menus, null, 4),
+    value: JSON.stringify(reactiveMenu.menus, null, 4),
     language: 'json'
   })
 })
@@ -24,7 +24,7 @@ function save() {
     const str = monacoIns.getValue()
     try {
       const newMenus = JSON.parse(str)
-      reactiveMenuData.methods.updateMenus(newMenus)
+      reactiveMenu.methods.updateMenus(newMenus)
     } catch (e) {
       ElMessage({
         type: 'error',

@@ -8,7 +8,7 @@ import {
   NImage,
   NMenu
 } from 'naive-ui'
-import { useReactiveMenu } from 'reactive-menu-item'
+import { useReactiveMenu } from 'reactive-menu'
 
 import { computed, h, nextTick, ref, watch } from 'vue'
 import * as _ from 'lodash'
@@ -45,7 +45,7 @@ const menus = [
             query: [
               {
                 key: 'type',
-                isReal: true,
+                required: true,
                 value: '普通菜单'
               }
             ]
@@ -77,7 +77,7 @@ const menus = [
                 query: [
                   {
                     key: 'type',
-                    isReal: true,
+                    required: true,
                     value: '叶子菜单1'
                   }
                 ]
@@ -97,7 +97,7 @@ const menus = [
                 query: [
                   {
                     key: 'type',
-                    isReal: true,
+                    required: true,
                     value: '叶子菜单2'
                   }
                 ]
@@ -123,7 +123,7 @@ const menus = [
         query: [
           {
             key: 'type',
-            isReal: true,
+            required: true,
             value: '一级菜单2'
           }
         ]
@@ -163,7 +163,7 @@ const menus = [
 ]
 const topActiveKey = ref(null)
 const sideActiveKey = ref(null)
-const reactiveMenuData = useReactiveMenu(menus, {
+const reactiveMenu = useReactiveMenu(menus, {
   config: {
     resetId: true,
     autoIndex: true
@@ -172,14 +172,14 @@ const reactiveMenuData = useReactiveMenu(menus, {
 resetActiveIndex()
 
 const topMenuOptions = computed(() => {
-  return buildNaiveMenuOptions(reactiveMenuData.menus)
+  return buildNaiveMenuOptions(reactiveMenu.menus)
 })
 const sideMenuOptions = computed(() => {
-  return buildNaiveMenuOptions(reactiveMenuData.secondMenus)
+  return buildNaiveMenuOptions(reactiveMenu.secondMenus)
 })
 
 watch(
-  () => reactiveMenuData.activeIndex,
+  () => reactiveMenu.activeIndex,
   () => {
     resetActiveIndex()
   }
@@ -228,25 +228,25 @@ function renderMenuIcon(option) {
 
 function resetActiveIndex(ref) {
   nextTick(() => {
-    topActiveKey.value = reactiveMenuData.topActiveIndex
-    sideActiveKey.value = reactiveMenuData.activeIndex
-    topMenu.value?.showOption(reactiveMenuData.topActiveIndex)
-    sideMenu.value?.showOption(reactiveMenuData.activeIndex)
+    topActiveKey.value = reactiveMenu.topActiveIndex
+    sideActiveKey.value = reactiveMenu.activeIndex
+    topMenu.value?.showOption(reactiveMenu.topActiveIndex)
+    sideMenu.value?.showOption(reactiveMenu.activeIndex)
   })
 }
 
 function handleUpdateMenu(key, menu) {
-  const isSelf = key === reactiveMenuData.currentMenu?.id
+  const isSelf = key === reactiveMenu.currentMenu?.id
   if (
     menu.config.disabledDefaultClick ||
     menu.config.disabled ||
-    (isSelf && !reactiveMenuData.config.selfJump)
+    (isSelf && !reactiveMenu.config.selfJump)
   ) {
     resetActiveIndex()
     return
   }
 
-  const jumpMenu = reactiveMenuData.methods.jump(menu)
+  const jumpMenu = reactiveMenu.methods.jump(menu)
   if (
     !jumpMenu ||
     (jumpMenu && jumpMenu.config?.target && jumpMenu.config.target !== '_self') ||

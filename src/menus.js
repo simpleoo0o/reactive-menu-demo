@@ -1,5 +1,5 @@
-// 配置说明参考node_modules/@plantdata/reactive-menu-item/interface.ts
-// 导航使用参考node_modules/@plantdata/reactive-menu-item/README.md
+// 配置说明参考node_modules/@plantdata/reactive-menu
+// 导航使用参考node_modules/@plantdata/reactive-menu/README.md
 const menus = [
   {
     name: '一级菜单1',
@@ -39,7 +39,7 @@ const menus = [
                 query: [
                   {
                     key: 'type',
-                    isReal: true,
+                    required: true,
                     value: '1-1-2'
                   }
                 ]
@@ -59,7 +59,7 @@ const menus = [
                     query: [
                       {
                         key: 'type',
-                        isReal: true,
+                        required: true,
                         value: '叶子菜单的详情页'
                       }
                     ]
@@ -82,7 +82,7 @@ const menus = [
                 query: [
                   {
                     key: 'type',
-                    isReal: true,
+                    required: true,
                     value: '菜单分组测试1'
                   }
                 ]
@@ -102,7 +102,7 @@ const menus = [
                     query: [
                       {
                         key: 'type',
-                        isReal: true,
+                        required: true,
                         value: '叶子菜单1'
                       }
                     ]
@@ -122,7 +122,7 @@ const menus = [
                     query: [
                       {
                         key: 'type',
-                        isReal: true,
+                        required: true,
                         value: '叶子菜单2'
                       }
                     ]
@@ -148,7 +148,7 @@ const menus = [
             query: [
               {
                 key: 'type',
-                isReal: true,
+                required: true,
                 value: '普通菜单'
               }
             ]
@@ -170,12 +170,12 @@ const menus = [
             query: [
               {
                 key: 'type',
-                isReal: true,
+                required: true,
                 value: 'query可选参数测试'
               },
               {
                 key: 'url',
-                isReal: true,
+                required: true,
                 // eslint-disable-next-line no-template-curly-in-string
                 value: '/a/b/c/${kgName}/${apk?}/${page?}?kw=${kw}'
               }
@@ -222,7 +222,7 @@ const menus = [
                 key: 'url',
                 // eslint-disable-next-line no-template-curly-in-string
                 value: 'https://www.baidu.com/s?wd=${kgName?}',
-                isReal: true
+                required: true
               }
             ]
           }
@@ -292,7 +292,7 @@ const menus = [
         query: [
           {
             key: 'type',
-            isReal: true,
+            required: true,
             value: '一级菜单3'
           }
         ]
@@ -388,7 +388,7 @@ const menus = [
             query: [
               {
                 key: 'type',
-                isReal: true,
+                required: true,
                 value: '菜单1'
               }
             ]
@@ -409,7 +409,7 @@ const menus = [
             query: [
               {
                 key: 'type',
-                isReal: true,
+                required: true,
                 value: '菜单2'
               }
             ]

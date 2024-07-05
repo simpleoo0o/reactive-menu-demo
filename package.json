@@ -1,5 +1,5 @@
 {
-  "name": "reactive-menu-item-demo",
+  "name": "reactive-menu-demo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -18,7 +18,7 @@
     "monaco-editor": "^0.48.0",
     "naive-ui": "^2.38.1",
     "npm": "^10.5.2",
-    "reactive-menu-item": "^1.0.5",
+    "reactive-menu": "^1.0.6",
     "vue": "^3.4.24",
     "vue-router": "^4.3.2"
   },

@@ -4,23 +4,23 @@ import { RouterView, useRoute } from 'vue-router'
 import { computed, inject } from 'vue'
 import { ElButton } from 'element-plus'
 
-const reactiveMenuData = inject('reactiveMenuData')
+const reactiveMenu = inject('reactiveMenu')
 
 const route = useRoute()
 
 const currentMenuStr = computed(() => {
-  return JSON.stringify(reactiveMenuData.currentMenu, null, 2)
+  return JSON.stringify(reactiveMenu.currentMenu, null, 2)
 })
 const matchMenuStr = computed(() => {
-  return JSON.stringify(reactiveMenuData.currentMenuWithParents.at(-1), null, 2)
+  return JSON.stringify(reactiveMenu.currentMenuWithParents.at(-1), null, 2)
 })
 
 const submenu = computed(() => {
-  return _.filter(reactiveMenuData.currentMenuWithParents.at(-1)?.children, ['type', 'submenu'])
+  return _.filter(reactiveMenu.currentMenuWithParents.at(-1)?.children, ['type', 'submenu'])
 })
 
 function goDetail(item) {
-  reactiveMenuData.methods.jump(item)
+  reactiveMenu.methods.jump(item)
 }
 </script>
 

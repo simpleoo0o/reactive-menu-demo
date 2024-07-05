@@ -6,9 +6,9 @@ import {
   MenuItemGroup as AMenuItemGroup
 } from 'ant-design-vue'
 import { computed, inject } from 'vue'
-import MenuContent from 'reactive-menu-item/MenuContent.vue'
+import { MenuContent } from 'reactive-menu'
 
-const reactiveMenuData = inject('reactiveMenuData')
+const reactiveMenu = inject('reactiveMenu')
 
 const props = defineProps({
   data: Object
@@ -31,13 +31,13 @@ const type = computed(function () {
   return ''
 })
 const isActive = computed(function () {
-  return !!_.find(reactiveMenuData.currentMenuWithParents, ['id', props.data.id])
+  return !!_.find(reactiveMenu.currentMenuWithParents, ['id', props.data.id])
 })
 
 function handleClick() {
   window.event.stopPropagation()
   window.event.stopImmediatePropagation()
-  const isSelf = props.data.id === reactiveMenuData.currentMenu?.id
+  const isSelf = props.data.id === reactiveMenu.currentMenu?.id
   emit('on-click', {
     type,
     isSelf,
@@ -46,13 +46,13 @@ function handleClick() {
   if (
     props.data.config.disabledDefaultClick ||
     props.data.config.disabled ||
-    (isSelf && !reactiveMenuData.config.selfJump)
+    (isSelf && !reactiveMenu.config.selfJump)
   ) {
     resetActiveIndex()
     return
   }
 
-  const menu = reactiveMenuData.methods.jump(props.data)
+  const menu = reactiveMenu.methods.jump(props.data)
   if (!menu || (menu && menu.config?.target && menu.config.target !== '_self')) {
     resetActiveIndex()
   }
@@ -76,7 +76,7 @@ function classGet(type) {
 }
 
 function resetActiveIndex() {
-  // const activeMenuIndex = _.findLast(reactiveMenuData.currentMenuWithParents, (item) => {
+  // const activeMenuIndex = _.findLast(reactiveMenu.currentMenuWithParents, (item) => {
   //   return _.find(rootMenu.items, ['index', item.id])
   // })?.id
   // const activeIndex = toRef(rootMenu, 'activeIndex')
@@ -84,10 +84,10 @@ function resetActiveIndex() {
   //   activeIndex.value = activeMenuIndex
   // } else {
   //   activeIndex.value = null
-  //   // reactiveMenuData.currentMenu = null
-  //   // reactiveMenuData.currentMenuWithParents = []
+  //   // reactiveMenu.currentMenu = null
+  //   // reactiveMenu.currentMenuWithParents = []
   //   // nextTick(() => {
-  //   //   reactiveMenuData.methods.matchRoute()
+  //   //   reactiveMenu.methods.matchRoute()
   //   // })
   // }
 }
@@ -98,7 +98,8 @@ function resetActiveIndex() {
     :is="data.config.element"
     v-if="data.config && data.config.element"
     :data="data"
-    :class="classGet('component')">
+    :class="classGet('component')"
+  >
   </component>
   <a-menu-item-group
     v-else-if="type === 'menuItemGroup'"
@@ -106,7 +107,8 @@ function resetActiveIndex() {
     :disabled="data.config?.disabled"
     :class="classGet('menu-item-group')"
     v-bind="data.config.attributes"
-    @click.stop="handleClick">
+    @click.stop="handleClick"
+  >
     <template #title>
       <slot name="menu-item-group" :data="data">
         <menu-content :menu-data="data" />
@@ -132,7 +134,8 @@ function resetActiveIndex() {
     :disabled="data.config?.disabled"
     :index="data.id"
     :class="classGet('sub-menu')"
-    @click.stop="handleClick">
+    @click.stop="handleClick"
+  >
     <template #title>
       <slot name="sub-menu" :data="data">
         <menu-content :menu-data="data" />
@@ -157,7 +160,8 @@ function resetActiveIndex() {
     :disabled="data.config?.disabled"
     :index="data.id"
     :class="classGet('menu-item')"
-    @click="handleClick">
+    @click="handleClick"
+  >
     <slot name="menu-item" :data="data">
       <menu-content :menu-data="data" />
     </slot>

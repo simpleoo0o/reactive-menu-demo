@@ -8,7 +8,7 @@ import {
   Breadcrumb as ABreadcrumb,
   BreadcrumbItem as ABreadcrumbItem
 } from 'ant-design-vue'
-import { useReactiveMenu } from 'reactive-menu-item'
+import { useReactiveMenu } from 'reactive-menu'
 import AntdvMenuItem from '../components/AntdvMenuItem.vue'
 import { RouterView } from 'vue-router'
 import { ref } from 'vue'
@@ -42,7 +42,7 @@ const menus = [
             query: [
               {
                 key: 'type',
-                isReal: true,
+                required: true,
                 value: '普通菜单'
               }
             ]
@@ -74,7 +74,7 @@ const menus = [
                 query: [
                   {
                     key: 'type',
-                    isReal: true,
+                    required: true,
                     value: '叶子菜单1'
                   }
                 ]
@@ -94,7 +94,7 @@ const menus = [
                 query: [
                   {
                     key: 'type',
-                    isReal: true,
+                    required: true,
                     value: '叶子菜单2'
                   }
                 ]
@@ -120,7 +120,7 @@ const menus = [
         query: [
           {
             key: 'type',
-            isReal: true,
+            required: true,
             value: '一级菜单2'
           }
         ]
@@ -144,7 +144,7 @@ const menus = [
     }
   }
 ]
-const reactiveMenuData = useReactiveMenu(menus, {
+const reactiveMenu = useReactiveMenu(menus, {
   config: {
     resetId: true,
     autoIndex: true
@@ -153,7 +153,7 @@ const reactiveMenuData = useReactiveMenu(menus, {
 const topMenu = ref(null)
 
 function goHome() {
-  reactiveMenuData.methods.goDefault()
+  reactiveMenu.methods.goDefault()
 }
 </script>
 
@@ -163,29 +163,29 @@ function goHome() {
       <div class="logo" @click="goHome" />
       <a-menu
         ref="topMenu"
-        :selected-keys="[reactiveMenuData.topActiveIndex]"
-        :open-keys="reactiveMenuData.currentMenuWithParents.map((o) => o.id)"
+        :selected-keys="[reactiveMenu.topActiveIndex]"
+        :open-keys="reactiveMenu.currentMenuWithParents.map((o) => o.id)"
         theme="dark"
         mode="horizontal"
         :style="{ lineHeight: '64px' }"
       >
-        <antdv-menu-item v-for="item of reactiveMenuData.menus" :key="item.id" :data="item" />
+        <antdv-menu-item v-for="item of reactiveMenu.menus" :key="item.id" :data="item" />
       </a-menu>
     </a-layout-header>
     <a-layout>
       <a-layout-sider
-        v-if="reactiveMenuData.secondMenus?.length"
+        v-if="reactiveMenu.secondMenus?.length"
         width="200"
         style="background: #fff"
       >
         <a-menu
-          :selected-keys="[reactiveMenuData.activeIndex]"
-          :open-keys="reactiveMenuData.currentMenuWithParents.map((o) => o.id)"
+          :selected-keys="[reactiveMenu.activeIndex]"
+          :open-keys="reactiveMenu.currentMenuWithParents.map((o) => o.id)"
           mode="inline"
           :style="{ height: '100%', borderRight: 0 }"
         >
           <antdv-menu-item
-            v-for="item of reactiveMenuData.secondMenus"
+            v-for="item of reactiveMenu.secondMenus"
             :key="item.id"
             :data="item"
           />
@@ -193,7 +193,7 @@ function goHome() {
       </a-layout-sider>
       <a-layout style="padding: 0 24px 24px">
         <a-breadcrumb style="margin: 16px 0">
-          <a-breadcrumb-item v-for="item of reactiveMenuData.currentMenuWithParents" :key="item.id">
+          <a-breadcrumb-item v-for="item of reactiveMenu.currentMenuWithParents" :key="item.id">
             {{ item.name }}
           </a-breadcrumb-item>
         </a-breadcrumb>

@@ -2,7 +2,7 @@
 import { RouterView } from 'vue-router'
 import { ElContainer, ElHeader, ElAside, ElMain, ElMenu } from 'element-plus'
 import menus from '../menus'
-import { ReactiveMenuItem, useReactiveMenu } from 'reactive-menu-item'
+import { ReactiveMenuItem, useReactiveMenu } from 'reactive-menu'
 import { computed, ref } from 'vue'
 
 const collapse = ref(false)
@@ -13,7 +13,7 @@ const calcMock = computed(() => {
     apk: 'k_p_a'
   }
 })
-const reactiveMenuData = useReactiveMenu(menus, {
+const reactiveMenu = useReactiveMenu(menus, {
   mock: calcMock,
   config: {
     resetId: true
@@ -21,7 +21,7 @@ const reactiveMenuData = useReactiveMenu(menus, {
 })
 
 function goHome() {
-  reactiveMenuData.methods.goDefault()
+  reactiveMenu.methods.goDefault()
 }
 
 function handleCollapse() {
@@ -34,16 +34,16 @@ function handleCollapse() {
     <el-header>
       <div class="logo" @click="goHome">LOGO</div>
       <el-menu
-        :default-active="reactiveMenuData.topActiveIndex"
+        :default-active="reactiveMenu.topActiveIndex"
         class="el-menu-demo"
         mode="horizontal"
         :ellipsis="false"
       >
-        <reactive-menu-item v-for="item of reactiveMenuData.menus" :key="item.id" :data="item" />
+        <reactive-menu-item v-for="item of reactiveMenu.menus" :key="item.id" :data="item" />
       </el-menu>
     </el-header>
     <el-container class="body">
-      <el-aside v-if="reactiveMenuData?.secondMenus?.length" :width="collapse ? 'auto' : '200px'">
+      <el-aside v-if="reactiveMenu?.secondMenus?.length" :width="collapse ? 'auto' : '200px'">
         <div class="menu-control" @click="handleCollapse">
           <div class="menu-control-line-container" :class="{ collapse: collapse }">
             <div class="menu-control-line"></div>
@@ -53,22 +53,15 @@ function handleCollapse() {
         </div>
         <el-menu
           :collapse="collapse"
-          :default-active="reactiveMenuData.activeIndex"
+          :default-active="reactiveMenu.activeIndex"
           class="el-menu-demo"
           mode="vertical"
           :ellipsis="false"
         >
           <reactive-menu-item
-            v-for="item of reactiveMenuData.secondMenus"
+            v-for="item of reactiveMenu.secondMenus"
             :key="item.id"
-            :data="item"
-          >
-            <!--                        <template #menu-item="{data}">-->
-            <!--                            {{data.name}}={{data.id}}-->
-            <!--                        </template>-->
-            <!--                        <template #menu-item-group="{data}">-->
-            <!--                            {{data.name}}==={{data.id}}-->
-            <!--                        </template>-->
+            :data="item">
           </reactive-menu-item>
         </el-menu>
       </el-aside>
