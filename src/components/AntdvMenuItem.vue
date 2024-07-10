@@ -1,5 +1,5 @@
 <script setup>
-import * as _ from 'lodash'
+import {filter, find} from 'lodash-es'
 import {
   SubMenu as ASubMenu,
   MenuItem as AMenuItem,
@@ -18,7 +18,7 @@ const menuChildren = computed(() => {
   if (props.data.config.boundary) {
     return []
   }
-  return _.filter(props.data.children, ['type', 'menu'])
+  return filter(props.data.children, ['type', 'menu'])
 })
 const type = computed(function () {
   if (props.data.config.menuItemGroup) {
@@ -31,7 +31,7 @@ const type = computed(function () {
   return ''
 })
 const isActive = computed(function () {
-  return !!_.find(reactiveMenu.currentMenuWithParents, ['id', props.data.id])
+  return !!find(reactiveMenu.currentMenuWithParents, ['id', props.data.id])
 })
 
 function handleClick() {
@@ -76,8 +76,8 @@ function classGet(type) {
 }
 
 function resetActiveIndex() {
-  // const activeMenuIndex = _.findLast(reactiveMenu.currentMenuWithParents, (item) => {
-  //   return _.find(rootMenu.items, ['index', item.id])
+  // const activeMenuIndex = findLast(reactiveMenu.currentMenuWithParents, (item) => {
+  //   return find(rootMenu.items, ['index', item.id])
   // })?.id
   // const activeIndex = toRef(rootMenu, 'activeIndex')
   // if (activeMenuIndex) {

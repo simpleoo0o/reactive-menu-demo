@@ -1,5 +1,5 @@
 <script setup>
-import * as _ from 'lodash'
+import {filter} from 'lodash-es'
 import { RouterView, useRoute } from 'vue-router'
 import { computed, inject } from 'vue'
 import { ElButton } from 'element-plus'
@@ -16,7 +16,7 @@ const matchMenuStr = computed(() => {
 })
 
 const submenu = computed(() => {
-  return _.filter(reactiveMenu.currentMenuWithParents.at(-1)?.children, ['type', 'submenu'])
+  return filter(reactiveMenu.currentMenuWithParents.at(-1)?.children, ['type', 'submenu'])
 })
 
 function goDetail(item) {

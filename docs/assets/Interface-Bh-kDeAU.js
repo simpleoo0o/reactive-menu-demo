@@ -1,4 +1,4 @@
-import{e as o}from"./toggleHighContrast-CFQ8FusB.js";import{_ as i,r as a,o as r,a as s,c as u,b as l}from"./index-BOiIhUBY.js";const t=`export interface ReactiveMenuConfig {
+import{e as o}from"./toggleHighContrast-DUyn4Qos.js";import{_ as i,r as a,o as r,a as s,c as u,b as l}from"./index-D-4pVYRG.js";const t=`export interface ReactiveMenuConfig {
     autoIndex?: boolean | ((reactiveMenu: ReactiveMenu) => void);
     selfJump?: boolean;
     disableMock?: boolean;

@@ -11,6 +11,7 @@ console.log(html)
     <div v-highlight v-html="html"></div>
   </div>
 </template>
+
 <style scoped lang="scss">
 .read-me {
   height: 100%;

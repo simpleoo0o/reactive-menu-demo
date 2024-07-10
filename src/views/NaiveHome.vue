@@ -11,7 +11,7 @@ import {
 import { useReactiveMenu } from 'reactive-menu'
 
 import { computed, h, nextTick, ref, watch } from 'vue'
-import * as _ from 'lodash'
+import {filter} from 'lodash-es'
 import { RouterView } from 'vue-router'
 
 const topMenu = ref(null)
@@ -193,7 +193,7 @@ function buildNaiveMenuOptions(menus) {
       })
     }
   }
-  return _.filter(menus, (menu) => {
+  return filter(menus, (menu) => {
     return menu.type === 'menu'
   })
 }
